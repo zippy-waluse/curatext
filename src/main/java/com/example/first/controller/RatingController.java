@@ -17,9 +17,9 @@
 //    }
 //}
 
-package com.example.first.controller; // Ensure it's in the correct package
+package com.example.first.controller;
 
-import com.example.first.service.RatingService; // ✅ Import the RatingService
+import com.example.first.service.RatingService;
 import com.example.first.utility.Rating;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -28,7 +28,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/ratings")
 public class RatingController {
     @Autowired
-    private RatingService ratingService; // ✅ Ensure correct injection
+    private RatingService ratingService;
 
     @PostMapping("/{courseId}")
     public Rating addRating(@PathVariable Long courseId, @RequestParam Double value) {

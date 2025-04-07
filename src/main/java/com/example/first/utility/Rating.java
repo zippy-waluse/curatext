@@ -9,7 +9,7 @@ public class Rating {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Double value;  // Rating value (e.g., 1.0 - 5.0)
+    private Double value;
 
     @ManyToOne
     @JoinColumn(name = "course_id")

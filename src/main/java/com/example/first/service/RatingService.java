@@ -1,4 +1,4 @@
-package com.example.first.service; // Ensure it's in the correct package
+package com.example.first.service;
 
 import com.example.first.repository.RatingRepository;
 import com.example.first.utility.Course;
@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
-@Service // ✅ Ensure this annotation is present
+@Service
 public class RatingService {
     @Autowired
     private RatingRepository ratingRepository;

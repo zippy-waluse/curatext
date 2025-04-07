@@ -54,7 +54,6 @@ public class CourseService {
         return course.orElseThrow(() -> new RuntimeException("Course not found"));
     }
 
-    // ✅ Add this method to update a course
     public void updateCourse(Course course) {
         courseRepository.save(course);
     }

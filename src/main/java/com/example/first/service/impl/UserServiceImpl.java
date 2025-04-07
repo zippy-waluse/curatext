@@ -85,7 +85,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User createUser(User user) {
-        // Ensure password is hashed before saving
         user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         return userRepository.save(user);
     }
@@ -101,7 +100,6 @@ public class UserServiceImpl implements UserService {
 
         User user = optionalUser.get();
 
-        // Verify hashed password
         if (!BCrypt.checkpw(password, user.getPassword())) {
             System.out.println("Incorrect password entered!");
             return null;

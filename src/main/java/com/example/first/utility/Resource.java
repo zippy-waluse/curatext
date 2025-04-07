@@ -47,7 +47,6 @@ public class Resource {
     @JoinColumn(name = "topic_id")
     private Topic topic;
 
-    // Default constructor
     public Resource() {
     }
 
@@ -60,7 +59,6 @@ public class Resource {
         this.topic = topic;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
