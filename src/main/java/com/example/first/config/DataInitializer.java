@@ -1,7 +1,7 @@
 package com.example.first.config;
 
 import com.example.first.service.CourseService;
-import com.example.first.utility.Course;
+import com.example.first.utility.Courses;
 import com.example.first.utility.Resource;
 import com.example.first.utility.Topic;
 import org.springframework.boot.CommandLineRunner;
@@ -14,7 +14,7 @@ public class DataInitializer {
     @Bean
     CommandLineRunner initDatabase(CourseService courseService) {
         return args -> {
-            Course c1 = new Course("c1", "Business Communication", "Fundamentals of workplace communication...");
+            Courses c1 = new Courses("c1", "Business Communication", "Fundamentals of workplace communication...");
             Topic t1 = new Topic("c1_t1", "Verbal & Non-Verbal Communication", c1);
             Resource r1 = new Resource("c1_r1", "Mastering Business Communication", "https://example.com/business-communication.pdf", "PDF", t1);
 

@@ -1,7 +1,11 @@
 package com.example.first.utility;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "ratings")
 public class Rating {
@@ -13,32 +17,21 @@ public class Rating {
 
     @ManyToOne
     @JoinColumn(name = "course_id")
-    private Course course;
+    private Courses courses;
 
     public Rating() {}
 
-    public Rating(Double value, Course course) {
+    public Rating(Double value, Courses courses) {
         this.value = value;
-        this.course = course;
+        this.courses = courses;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public Double getValue() {
-        return value;
-    }
-
-    public void setValue(Double value) {
-        this.value = value;
-    }
-
-    public Course getCourse() {
-        return course;
-    }
-
-    public void setCourse(Course course) {
-        this.course = course;
+    @Override
+    public String toString() {
+        return "Rating{" +
+                "id=" + id +
+                ", value=" + value +
+                ", courses=" + courses +
+                '}';
     }
 }

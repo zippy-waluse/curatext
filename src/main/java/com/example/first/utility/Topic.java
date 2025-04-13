@@ -14,12 +14,12 @@
 //
 //    @ManyToOne
 //    @JoinColumn(name = "course_id")
-//    private Course course;
+//    private Courses courses;
 //
 //    @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL, orphanRemoval = true)
 //    private List<Resource> resources;
 //
-//    public Topic(String c1T1, String s, Course c1) {
+//    public Topic(String c1T1, String s, Courses c1) {
 //
 //    }
 //
@@ -50,15 +50,15 @@ public class Topic {
 
     @ManyToOne
     @JoinColumn(name = "course_id")
-    private Course course;
+    private Courses courses;
 
     @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Resource> resources;
 
-    public Topic(String topicId, String name, Course course) {
+    public Topic(String topicId, String name, Courses courses) {
         this.topicId = topicId;
         this.name = name;
-        this.course = course;
+        this.courses = courses;
     }
 
     public Topic() {}
@@ -75,8 +75,8 @@ public class Topic {
         this.name = name;
     }
 
-    public void setCourse(Course course) {
-        this.course = course;
+    public void setCourses(Courses courses) {
+        this.courses = courses;
     }
 
     public void setResources(List<Resource> resources) {
@@ -106,7 +106,7 @@ public class Topic {
 //
 //    @ManyToOne
 //    @JoinColumn(name = "course_id")
-//    private Course course;
+//    private Courses courses;
 //
 //    // Constructors
 //    public Topic() {}
@@ -116,7 +116,7 @@ public class Topic {
 //        this.description = description;
 //    }
 //
-//    public Topic(String c1T1, String s, Course c1) {
+//    public Topic(String c1T1, String s, Courses c1) {
 //
 //    }
 //

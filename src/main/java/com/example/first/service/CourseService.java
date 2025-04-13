@@ -1,7 +1,7 @@
 //package com.example.first.service;
 //
 //import com.example.first.repository.CourseRepository;
-//import com.example.first.utility.Course;
+//import com.example.first.utility.Courses;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.stereotype.Service;
 //import org.springframework.transaction.annotation.Transactional;
@@ -13,11 +13,11 @@
 //    private CourseRepository courseRepository;
 //
 //    @Transactional
-//    public void saveAllCourses(List<Course> courses) {
+//    public void saveAllCourses(List<Courses> courses) {
 //        courseRepository.saveAll(courses);
 //    }
 //
-//    public List<Course> getAllCourses() {
+//    public List<Courses> getAllCourses() {
 //        return courseRepository.findAll();
 //    }
 //}
@@ -27,7 +27,7 @@
 package com.example.first.service;
 
 import com.example.first.repository.CourseRepository;
-import com.example.first.utility.Course;
+import com.example.first.utility.Courses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,21 +40,20 @@ public class CourseService {
     private CourseRepository courseRepository;
 
     @Transactional
-    public void saveAllCourses(List<Course> courses) {
+    public void saveAllCourses(List<Courses> courses) {
         courseRepository.saveAll(courses);
     }
 
-    public List<Course> getAllCourses() {
+    public List<Courses> getAllCourses() {
         return courseRepository.findAll();
     }
 
-    // ✅ Add this method to get a course by ID
-    public Course getCourseById(Long id) {
-        Optional<Course> course = courseRepository.findById(id);
-        return course.orElseThrow(() -> new RuntimeException("Course not found"));
+    public Courses getCourseById(Long id) {
+        Optional<Courses> courses = courseRepository.findById(id);
+        return courses.orElseThrow(() -> new RuntimeException("Courses not found"));
     }
 
-    public void updateCourse(Course course) {
-        courseRepository.save(course);
+    public void updateCourse(Courses courses) {
+        courseRepository.save(courses);
     }
 }
