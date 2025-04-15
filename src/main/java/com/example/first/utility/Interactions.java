@@ -5,27 +5,6 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
-//@Entity
-//@Data
-//@Table(name = "interactions")
-//public class Interactions {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-//    public long id;
-//    public User user;
-//    public String enrollment_status;
-//    public Courses courses;
-//
-//    @Override
-//    public String toString() {
-//        return "Interactions{" +
-//                "id=" + id +
-//                ", user=" + user +
-//                ", enrollment_status='" + enrollment_status + '\'' +
-//                ", courses=" + courses +
-//                '}';
-//    }
-//}
 
 @Entity
 @Data

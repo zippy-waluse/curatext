@@ -87,7 +87,7 @@ public class UserController {
         if (user != null) {
             loginResponse.setMessage("User authenticated successfully");
             loginResponse.setStatus_code("200");
-            loginResponse.setToken("jwt token here"); // Replace with actual JWT token generation logic
+            loginResponse.setToken("jwt token here");
             loginResponse.setEmailAddress(user.getEmailAddress());
 
             return ResponseEntity.ok(loginResponse);
