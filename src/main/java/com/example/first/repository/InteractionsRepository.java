@@ -29,12 +29,8 @@ import java.util.Optional;
 @Repository
 public interface InteractionsRepository extends JpaRepository<Interactions, Long> {
 
-    // This method will fetch all interactions by the user's email address
     List<Interactions> findAllByUserEmailAddress(String emailAddress);
 
-    // You can still use the existing method for finding a specific interaction by user email and course ID
     Optional<Interactions> findByUserEmailAddressAndCoursesId(String emailAddress, Long courseId);
-
-    // Other methods
     Optional<Interactions> findInteractionsByUserEmailAddress(String emailAddress);
 }

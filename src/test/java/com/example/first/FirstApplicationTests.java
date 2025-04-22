@@ -21,6 +21,9 @@ class FirstApplicationTests {
 
 	@Mock
 	private InteractionsRepository repo; // Mock the repository
+	private Double value
+			;
+	private Courses courses;
 
 	@Test
 	void testGetInteractions_NotFound() {
@@ -42,7 +45,7 @@ class FirstApplicationTests {
 		User u = new User();
 		u.setEmailAddress("test");
 		Courses c = new Courses();
-		Rating r = new Rating();
+		Rating r = new Rating(value, courses);
 		r.setValue(20.00);
 		c.setRatings(Collections.singletonList(r));
 		c.setName("test");

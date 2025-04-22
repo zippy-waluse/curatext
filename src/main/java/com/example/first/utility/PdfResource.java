@@ -81,24 +81,18 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Setter
+@Getter
 @Entity
 @Table(name = "pdf_resources")
 public class PdfResource {
 
-    @Getter
-    @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Setter
-    @Getter
     private String pdfUrl;
-    @Getter
-    @Setter
     private String fileName;
-    @Getter
-    @Setter
     private String filePath;
 
 //    @Setter
@@ -125,7 +119,5 @@ public class PdfResource {
     }
 
 
-    public Courses getCourses() { return courses; }
-    public void setCourses(Courses courses) { this.courses = courses; }
 }
 

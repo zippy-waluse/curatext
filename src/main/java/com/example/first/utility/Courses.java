@@ -160,6 +160,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.io.Serializable;
 import java.util.List;
 
 @Getter
@@ -168,7 +169,7 @@ import java.util.List;
 @Table(name = "courses")
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Courses {
+public class Courses implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

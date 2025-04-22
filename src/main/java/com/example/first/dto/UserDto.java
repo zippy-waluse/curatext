@@ -16,7 +16,7 @@ import lombok.Setter;
 public class UserDto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private String firstName;
+    private String fir2stName;
     private String secondName;
     private String lastName;
     private String emailAddress;
