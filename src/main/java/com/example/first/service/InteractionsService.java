@@ -210,13 +210,13 @@ public class InteractionsService {
     private InteractionsRepository interactionsRepository;
 
     public Interactions startCourse(String email, Long courseId) {
-        User user = userRepository.findByEmailAddress(email);
+        Optional<User> user = userRepository.findByEmailAddress(email);
 
         Courses course = courseRepository.findById(courseId)
                 .orElseThrow(() -> new RuntimeException("Course not found"));
 
         Interactions interaction = new Interactions();
-        interaction.setUser(user);
+        interaction.setUser(null);
         interaction.setCourses(course);
         interaction.setEnrollment_status("started");
         interaction.setProgressPercentage(0.0);
